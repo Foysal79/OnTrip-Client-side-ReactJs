@@ -1,0 +1,30 @@
+
+.background1 {
+    background-image: linear-gradient(to bottom, #035e8b, transparent), url('https://i.ibb.co/6Jmk28J/4.jpg');
+      background-size: cover; 
+      background-position: center; 
+      width: 100%;
+      height: 90vh;
+  
+      
+    }
+
+    .background2 {
+        background-image: linear-gradient(to bottom, #035e8b, transparent), url('https://i.ibb.co/M7kL2v8/2.jpg');
+          background-size: cover; 
+          background-position: center; 
+          width: 100%;
+          height: 90vh;
+      
+          
+        }
+
+        .background3 {
+            background-image: linear-gradient(to bottom, #035e8b, transparent), url('https://i.ibb.co/f8XqybR/3.jpg');
+              background-size: cover; 
+              background-position: center; 
+              width: 100%;
+              height: 90vh;
+          
+              
+            }
