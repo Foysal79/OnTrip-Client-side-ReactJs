@@ -162,7 +162,7 @@ function NavBar() {
                 </IconButton>
               </Tooltip> 
               : 
-            <Button href='/signin' sx={{color: 'white', textDecoration: 'none'}} variant="outlined">  Log In <LoginRoundedIcon />  </Button>
+            <Button href='/signIn' sx={{color: 'white', textDecoration: 'none'}} variant="outlined">  Log In <LoginRoundedIcon />  </Button>
             }
             
             <Menu

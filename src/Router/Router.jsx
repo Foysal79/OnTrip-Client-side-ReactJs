@@ -4,6 +4,7 @@ import Home from "../Pages/Home/Home/Home";
 import Root from "../LayOut/Root/Root";
 import Error from "../Components/Error/Error";
 import SignUp from "../SignUp/SignUp";
+import SignIn from "../SignIn/SignIn";
 
 
 
@@ -22,7 +23,12 @@ import SignUp from "../SignUp/SignUp";
         {
           path: '/signUp',
           element: <SignUp />
+        },
+        {
+          path: '/signIn',
+          element: <SignIn />
         }
+
       ]);
 
 
