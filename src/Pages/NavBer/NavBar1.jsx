@@ -61,7 +61,8 @@ const NavBar1 = () => {
               
             </a>
           </li>
-          <li><a>Dashboard</a></li>
+          
+          <Link to='/dashboard' > <li><a>Dashboard</a></li> </Link>
           <li><a>Offer Announcements</a></li>
           <button  onClick={()=>LogOut()} className="btn btn-primary" >Logout</button>
           

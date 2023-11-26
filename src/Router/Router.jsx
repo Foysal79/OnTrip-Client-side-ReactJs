@@ -5,6 +5,8 @@ import Root from "../LayOut/Root/Root";
 import Error from "../Components/Error/Error";
 import SignUp from "../SignUp/SignUp";
 import SignIn from "../SignIn/SignIn";
+import Dashboard from "../Dashboard/Pages/Dashboard/Dashboard";
+import UserHome from "../Dashboard/Pages/userHome/UserHome";
 
 
 
@@ -27,6 +29,16 @@ import SignIn from "../SignIn/SignIn";
         {
           path: '/signIn',
           element: <SignIn />
+        },
+        {
+          path: '/dashboard',
+          element : <Dashboard></Dashboard>,
+          children : [
+            {
+              path: '/dashboard/userHome',
+              element: <UserHome></UserHome>
+            }
+          ]
         }
 
       ]);
