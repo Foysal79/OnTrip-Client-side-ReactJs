@@ -15,6 +15,7 @@ import LoginRoundedIcon from '@mui/icons-material/LoginRounded';
 
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 import {  NavLink } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const pages = [
   { name: 'Home', link: '/' },
@@ -23,11 +24,20 @@ const pages = [
   { name: 'About Us', link: '/about' },
   { name: 'Contact Us', link: '/contact' },
 ];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+// const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+
+const settings = [
+  {name: 'Profile', link: '/profile'},
+  {name: 'Account', link: '/account'},
+  {name: 'Dashboard', link: '/dashboard'},
+  {name: 'Logout', link: '/Logout'},
+]
 
 function NavBar() {
 // TODO :-> user set pls
-    const user = false;
+    
+    
+    const {user} = React.useContext(AuthContext);
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -182,8 +192,8 @@ function NavBar() {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                <MenuItem to={setting.link} key={setting} onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center">{setting.name}</Typography>
                 </MenuItem>
               ))}
             </Menu>

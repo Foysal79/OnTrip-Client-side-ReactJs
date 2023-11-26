@@ -7,7 +7,7 @@ import TravelGuideSection from "../TravelGuideSection/TravelGuideSection";
 
 const Home = () => {
     return (
-        <div className="mt-12">
+        <div className="">
             <Helmet>
                 <title>OnTrip || Home</title>
             </Helmet>
