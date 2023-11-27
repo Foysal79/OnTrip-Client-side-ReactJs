@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 
@@ -9,6 +9,12 @@ const NavBar1 = () => {
     const admin = true;
     const Tourist = false;
     const  TourGuide = false;
+    const navigate = useNavigate();
+
+    const handelLogOut = () => {
+      LogOut();
+      navigate('/signIn');
+    }
 
     
 
@@ -59,10 +65,15 @@ const NavBar1 = () => {
             
           </div>
           <li>
-            <a >
-              Profile
-              
-            </a>
+          {
+            admin && <Link to='/dashboard/adminHome' > <li><a>profile</a></li> </Link>
+          }
+          {
+            Tourist && <Link to='/dashboard/userHome' > <li><a>profile</a></li> </Link>
+          }
+          {
+            TourGuide && <Link to='/dashboard/guideHome' > <li><a>profile</a></li> </Link>
+          }
           </li>
           {
             admin && <Link to='/dashboard/adminHome' > <li><a>Dashboard</a></li> </Link>
@@ -76,7 +87,7 @@ const NavBar1 = () => {
           
            
           <li><a>Offer Announcements</a></li>
-          <button  onClick={()=>LogOut()} className="btn btn-primary" >Logout</button>
+          <button  onClick={handelLogOut} className="btn btn-primary" >Logout</button>
           
         </ul>
       </div> :  <Link to='/signIn' className="btn bg-[#FFB703] text-lg font-bold hover:bg-[#FFB703]" ><button>Login</button></Link>

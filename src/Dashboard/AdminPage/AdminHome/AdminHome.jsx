@@ -1,10 +1,14 @@
 import React, { useContext } from 'react';
 import { MdVerified } from "react-icons/md";
 import { AuthContext } from '../../../Provider/AuthProvider';
+import { Helmet } from 'react-helmet-async';
 const AdminHome = () => {
     const {user} = useContext(AuthContext);
     return (
         <div className='w-full bg-[#023047] py-10 text-white px-8 rounded-2xl ' >
+            <Helmet>
+                <title>OnTrip || Admin Home</title>
+            </Helmet>
             <div className='flex justify-center items-center'>
             <h1 className='text-5xl font-semibold text-center' > Admin Profile </h1>
             <MdVerified className='text-5xl font-semibold text-center text-[#0866FF] ' ></MdVerified>
@@ -12,7 +16,7 @@ const AdminHome = () => {
 
             <div className='flex gap-10 p-24 justify-center items-center'>
                 <div  >
-                <img className='rounded-full' src={user.photoURL} alt="" />
+                <img className='rounded-full w-28' src={user.photoURL} alt="" />
                 </div>
 
                 <div className='border-l-2 pl-10' >
