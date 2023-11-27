@@ -12,6 +12,7 @@ import 'swiper/css/pagination';
 // import required modules
 import { Pagination } from 'swiper/modules';
 import { MotionAnimate } from "react-motion-animate";
+import { Link } from "react-router-dom";
 
 const TourTypeSection = () => {
     return (
@@ -75,10 +76,10 @@ const TourTypeSection = () => {
             </div></SwiperSlide>
 
         
-            <SwiperSlide><div className="flex flex-col justify-center md:mr-4 items-center  py-8 rounded-3xl bg-[#023047] " >
+            <SwiperSlide> <Link to='HillTracts' ><div  className="flex flex-col justify-center md:mr-4 items-center  py-8 rounded-3xl bg-[#023047] " >
                 <img className="rounded-full w-16 md:w-28" src="https://i.ibb.co/P4KkqR3/5.jpg" alt="" />
                 <h2 className=" text-center md:text-xl text-white" >Hill Tracts Exploration</h2>
-            </div></SwiperSlide>
+            </div></Link> </SwiperSlide>
 
         
       </Swiper>

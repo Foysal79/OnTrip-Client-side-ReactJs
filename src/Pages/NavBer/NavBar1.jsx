@@ -6,6 +6,9 @@ import { AuthContext } from "../../Provider/AuthProvider";
 const NavBar1 = () => {
 
     const {user, LogOut} = useContext(AuthContext);
+    const admin = true;
+    const Tourist = false;
+    const  TourGuide = false;
 
     
 
@@ -61,8 +64,17 @@ const NavBar1 = () => {
               
             </a>
           </li>
+          {
+            admin && <Link to='/dashboard/adminHome' > <li><a>Dashboard</a></li> </Link>
+          }
+          {
+            Tourist && <Link to='/dashboard/userHome' > <li><a>Dashboard</a></li> </Link>
+          }
+          {
+            TourGuide && <Link to='/dashboard/guideHome' > <li><a>Dashboard</a></li> </Link>
+          }
           
-          <Link to='/dashboard' > <li><a>Dashboard</a></li> </Link>
+           
           <li><a>Offer Announcements</a></li>
           <button  onClick={()=>LogOut()} className="btn btn-primary" >Logout</button>
           
