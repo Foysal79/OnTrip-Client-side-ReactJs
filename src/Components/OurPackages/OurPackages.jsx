@@ -4,6 +4,7 @@ import useAxiosPublic from './../../Hook/useAxiosPublic';
 import { useQuery } from '@tanstack/react-query';
 import OurPackagesCard from './OurPackagesCard';
 import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const OurPackages = () => {
 
@@ -37,9 +38,12 @@ const OurPackages = () => {
                 }
             </div>
 
-            <div className='flex justify-center items-center mt-24' >
+            <div className='flex justify-center items-center mt-10' >
+            <Link to='/packages' >
             <Button sx={{width : '200px', height: '50px', backgroundColor: "#023047" }} size='large'  variant="contained">All Package </Button>
+            </Link>
             </div>
+            
             
         </div>
     );

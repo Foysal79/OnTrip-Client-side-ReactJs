@@ -17,6 +17,14 @@ import MyBooking from "../Dashboard/Pages/MyBooking/MyBooking";
 import MyWishlist from "../Dashboard/Pages/MyWishlist/MyWishlist";
 import MyProfile from "../Dashboard/Pages/MyProfile";
 import AdminRoute from "./AdminRoute";
+import TypeOfPackages from "../Components/TypeOfPackages/TypeOfPackages";
+import HillTracts from "../Pages/Home/TourTypeSection/HillTracts";
+import BeachHolidays from "../Pages/Home/TourTypeSection/BeachHolidays";
+import TeaGardenTours from "../Pages/Home/TourTypeSection/TeaGardenTours";
+import HaorTours from "../Pages/Home/TourTypeSection/HaorTours";
+import AdventureTours from "../Pages/Home/TourTypeSection/AdventureTours";
+import AllPackages from "../Pages/AllPackages/AllPackages";
+import SinglePackages from "../Pages/singlePackages/singlePackages";
 
 
 
@@ -29,7 +37,37 @@ import AdminRoute from "./AdminRoute";
             {
                 path : '/',
                 element: <Home></Home>
-            }
+            },
+            {
+              path : '/packages/HillTracts',
+              element: <HillTracts></HillTracts>
+            },
+            {
+              path : '/packages/BeachHolidays',
+              element: <BeachHolidays></BeachHolidays>
+            },
+            {
+              path : '/packages/TeaGardenTours',
+              element: <TeaGardenTours></TeaGardenTours>
+            },
+            {
+              path : '/packages/HaorTours',
+              element: <HaorTours></HaorTours>
+            },
+            {
+              path : '/packages/AdventureTours',
+              element: <AdventureTours></AdventureTours>
+            },
+            {
+              path : '/packages',
+              element: <AllPackages></AllPackages>
+            },
+            {
+              path : '/singlePackages/:id',
+              element : <SinglePackages></SinglePackages>,
+              loader : ({params}) =>  fetch(`http://localhost:5000/singlePackages/${params.id}`),
+    
+            },
           ]
         },
         {

@@ -5,6 +5,7 @@ import 'react-tabs/style/react-tabs.css';
 import { MotionAnimate } from "react-motion-animate";
 import AboutUs from "../../../Components/AboutUs/AboutUs";
 import OurPackages from "../../../Components/OurPackages/OurPackages";
+import TourGuides from "../../../Components/TourGuides/TourGuides";
 
 const TravelGuideSection = () => {
     const [tabIndex, setTabIndex] = useState(0);
@@ -25,10 +26,14 @@ const TravelGuideSection = () => {
   <div className="divider divider-warning"></div>
 
          <TabPanel>
-              <AboutUs></AboutUs>
+         <AboutUs></AboutUs>
           </TabPanel>
-          <TabPanel> <OurPackages></OurPackages> </TabPanel>
-           <TabPanel>tab 3</TabPanel>
+
+          <TabPanel>
+             <OurPackages></OurPackages>
+          </TabPanel>
+
+           <TabPanel> <TourGuides></TourGuides> </TabPanel>
            
             
 

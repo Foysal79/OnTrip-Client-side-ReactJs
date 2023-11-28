@@ -7,12 +7,12 @@ import { Button, CardActionArea, Grid } from '@mui/material';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { Link } from 'react-router-dom';
 
-const OurPackagesCard = ({packag}) => {
-    const {_id, tripTitle, tripType, tripPrice, imgUrl1 } = packag || {}
+const Carts = ({item}) => {
+  const {_id,tripTitle, tripType, tripPrice, imgUrl1 } = item || {}
     return (
         <div>
             
-             <Card  sx={{ maxWidth: 345 , height: 370, overflow: 'auto', padding: "4px", borderRadius: "10px" }}>
+             <Card  sx={{ maxWidth: 345 , height: 400, overflow: 'auto', padding: "4px", borderRadius: "10px" }}>
       <CardActionArea>
       <CardActionArea>
         <CardMedia
@@ -61,4 +61,4 @@ const OurPackagesCard = ({packag}) => {
     );
 };
 
-export default OurPackagesCard;
+export default Carts;

@@ -40,7 +40,7 @@ const Banner = () => {
           
         </div>
         <div>
-            <Link to='/allServices' > <button   className='btn bg-[#FFB703] mr-5 '>BOOK NOW</button> </Link>
+            <Link to='/packages' > <button   className='btn bg-[#FFB703] mr-5 '>BOOK NOW</button> </Link>
             
             
         </div>
@@ -58,7 +58,7 @@ const Banner = () => {
         <h2 className=' text-4xl lg:text-7xl font-bold  lg:w-2/3'> JOURNEY TO EXPLORE WORLD</h2>
         
         <div>
-            <Link to='/allServices' > <button   className='btn bg-[#FFB703] mr-5 '>BOOK NOW</button> </Link>
+            <Link to='/packages' > <button   className='btn bg-[#FFB703] mr-5 '>BOOK NOW</button> </Link>
             
             
         </div>
@@ -76,7 +76,7 @@ const Banner = () => {
         <h2 className=' text-4xl lg:text-7xl font-bold  lg:w-2/3'> A More Rewarding Way To Travel </h2>
         
         <div>
-            <Link to='/allServices' > <button   className='btn bg-[#FFB703] mr-5 '>BOOK NOW</button> </Link>
+            <Link to='/packages' > <button   className='btn bg-[#FFB703] mr-5 '>BOOK NOW</button> </Link>
             
             
         </div>
