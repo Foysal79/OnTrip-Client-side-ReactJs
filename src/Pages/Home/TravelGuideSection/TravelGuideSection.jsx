@@ -3,6 +3,8 @@ import Title from "../../../Shared/Title";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { MotionAnimate } from "react-motion-animate";
+import AboutUs from "../../../Components/AboutUs/AboutUs";
+import OurPackages from "../../../Components/OurPackages/OurPackages";
 
 const TravelGuideSection = () => {
     const [tabIndex, setTabIndex] = useState(0);
@@ -22,8 +24,10 @@ const TravelGuideSection = () => {
   </TabList>
   <div className="divider divider-warning"></div>
 
-         <TabPanel>tab 1</TabPanel>
-          <TabPanel>tab 2</TabPanel>
+         <TabPanel>
+              <AboutUs></AboutUs>
+          </TabPanel>
+          <TabPanel> <OurPackages></OurPackages> </TabPanel>
            <TabPanel>tab 3</TabPanel>
            
             
