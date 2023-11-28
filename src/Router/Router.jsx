@@ -15,6 +15,7 @@ import GuideHome from "../Dashboard/GuidTour/GuideHome/GuideHome";
 import MyAssignedTours from "../Dashboard/GuidTour/MyAssignedTours/MyAssignedTours";
 import MyBooking from "../Dashboard/Pages/MyBooking/MyBooking";
 import MyWishlist from "../Dashboard/Pages/MyWishlist/MyWishlist";
+import MyProfile from "../Dashboard/Pages/MyProfile";
 
 
 
@@ -44,8 +45,8 @@ import MyWishlist from "../Dashboard/Pages/MyWishlist/MyWishlist";
           children : [
             // admin route
             {
-              path: '/dashboard/adminHome',
-              element: <AdminHome></AdminHome>
+              path: '/dashboard/myProfile',
+              element: <MyProfile></MyProfile>
             },
             {
               path: '/dashboard/addPackage',
@@ -57,8 +58,8 @@ import MyWishlist from "../Dashboard/Pages/MyWishlist/MyWishlist";
             },
             // Guide Route
             {
-              path: '/dashboard/guideHome',
-              element: <GuideHome></GuideHome>
+              path: '/dashboard/myProfile',
+              element: <MyProfile></MyProfile>
 
             },
             {
@@ -68,8 +69,8 @@ import MyWishlist from "../Dashboard/Pages/MyWishlist/MyWishlist";
             },
             // Tourist Route
             {
-              path: '/dashboard/userHome',
-              element: <UserHome></UserHome>
+              path: '/dashboard/myProfile',
+              element: <MyProfile></MyProfile>
             },
             {
               path: '/dashboard/myBooking',

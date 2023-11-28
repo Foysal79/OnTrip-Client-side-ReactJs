@@ -13,7 +13,7 @@ const NavBar1 = () => {
 
     const handelLogOut = () => {
       LogOut();
-      navigate('/signIn');
+      navigate('/');
     }
 
     
@@ -64,9 +64,10 @@ const NavBar1 = () => {
             <p>{user?.email}</p>
             
           </div>
-          <li>
+          <li><Link to='/dashboard/myProfile' > <h>profile</h> </Link></li>
+          {/* <li>
           {
-            admin && <Link to='/dashboard/adminHome' > <li><a>profile</a></li> </Link>
+            admin && <Link to='/dashboard/myProfile' > <li><a>profile</a></li> </Link>
           }
           {
             Tourist && <Link to='/dashboard/userHome' > <li><a>profile</a></li> </Link>
@@ -74,15 +75,15 @@ const NavBar1 = () => {
           {
             TourGuide && <Link to='/dashboard/guideHome' > <li><a>profile</a></li> </Link>
           }
-          </li>
+          </li> */}
           {
-            admin && <Link to='/dashboard/adminHome' > <li><a>Dashboard</a></li> </Link>
+            admin && <Link to='/dashboard/myProfile' > <li><a>Dashboard</a></li> </Link>
           }
           {
-            Tourist && <Link to='/dashboard/userHome' > <li><a>Dashboard</a></li> </Link>
+            Tourist && <Link to='/dashboard/myProfile' > <li><a>Dashboard</a></li> </Link>
           }
           {
-            TourGuide && <Link to='/dashboard/guideHome' > <li><a>Dashboard</a></li> </Link>
+            TourGuide && <Link to='/dashboard/myProfile' > <li><a>Dashboard</a></li> </Link>
           }
           
            

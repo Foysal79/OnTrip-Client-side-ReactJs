@@ -4,12 +4,18 @@ import {  FaAd, FaHome } from "react-icons/fa";
 import { MdOutlineManageAccounts, MdFavoriteBorder } from "react-icons/md";
 import { AiFillSchedule } from "react-icons/ai";
 import { CiBookmarkCheck } from "react-icons/ci";
+import useAdmin from "../../../Hook/useAdmin";
+import useGuid from "../../../Hook/useGuid";
 
 const Dashboard = () => {
 
-    const admin = true;
-    const Tourist = false;
-    const  TourGuide = false;
+    const [isAdmin] = useAdmin()
+    const [isGuid] = useGuid()
+
+    console.log(isAdmin);
+
+    
+    
     return (
         <div >
             <NavBar1></NavBar1>
@@ -23,9 +29,9 @@ const Dashboard = () => {
                 <div className="w-64 min-h-screen bg-[#163f53] text-white rounded-2xl" >
                     {/*------------------------- admin menu-------------------------------- */}
                     {
-                        admin &&  <ul className="menu p-4 space-y-4" >
+                        isAdmin &&  <ul className="menu p-4 space-y-4" >
 
-                        <li><NavLink to="/dashboard/adminHome" >
+                        <li><NavLink to="/dashboard/myProfile" >
                   <FaHome className="text-white" ></FaHome>
                   Admin Home</NavLink></li>
 
@@ -42,9 +48,9 @@ const Dashboard = () => {
                     }
                     {/* ----------------Tour Guide Menu---------------------*/}
                     {
-                        TourGuide && <ul className="menu p-4 space-y-4" >
+                        isGuid && <ul className="menu p-4 space-y-4" >
 
-                        <li><NavLink to="/dashboard/guideHome" >
+                        <li><NavLink to="/dashboard/myProfile" >
                   <FaHome className="text-white" ></FaHome>
                   Guide Home </NavLink></li>
 
@@ -57,9 +63,9 @@ const Dashboard = () => {
                     }
                     {/*---------------------- Tourist menu---------------------------------- */}
                     {
-                        Tourist &&  <ul className="menu p-4 space-y-4" >
+                        (!isAdmin && !isGuid) &&  <ul className="menu p-4 space-y-4" >
 
-                        <li><NavLink to="/dashboard/userHome" >
+                        <li><NavLink to="/dashboard/myProfile" >
                   <FaHome className="text-white" ></FaHome>
                   My Profile </NavLink></li>
 

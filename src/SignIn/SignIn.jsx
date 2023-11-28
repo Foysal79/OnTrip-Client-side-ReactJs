@@ -47,7 +47,7 @@ const SignIn = () => {
 				text: "You clicked the button!",
 				icon: "success"
 			});
-          navigate(location?.state ? location.state : '/')
+          navigate('/')
 		})
 		.catch(error => {
 			Swal.fire({
