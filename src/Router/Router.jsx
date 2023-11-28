@@ -16,6 +16,7 @@ import MyAssignedTours from "../Dashboard/GuidTour/MyAssignedTours/MyAssignedTou
 import MyBooking from "../Dashboard/Pages/MyBooking/MyBooking";
 import MyWishlist from "../Dashboard/Pages/MyWishlist/MyWishlist";
 import MyProfile from "../Dashboard/Pages/MyProfile";
+import AdminRoute from "./AdminRoute";
 
 
 
@@ -50,11 +51,11 @@ import MyProfile from "../Dashboard/Pages/MyProfile";
             },
             {
               path: '/dashboard/addPackage',
-              element: <AddPackage></AddPackage>
+              element: <AdminRoute><AddPackage></AddPackage></AdminRoute>
             },
             {
               path: '/dashboard/manageUsers',
-              element: <ManageUsers></ManageUsers>
+              element: <AdminRoute><ManageUsers></ManageUsers></AdminRoute>
             },
             // Guide Route
             {

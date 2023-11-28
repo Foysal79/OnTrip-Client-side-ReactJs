@@ -4,7 +4,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import useAxiosSecure from "./useAxiosSecure";
 
 const useAdmin = () => {
-    const {user} = useContext(AuthContext);
+    const {user, isPending: isAdminLoading} = useContext(AuthContext);
     const axiosSecure = useAxiosSecure();
     const {data : isAdmin} = useQuery({
      queryKey : [user?.email, 'isAdmin'],
@@ -14,7 +14,7 @@ const useAdmin = () => {
         return res.data?.admin;
      }
     })
-    return [isAdmin];
+    return [isAdmin, isAdminLoading];
 };
 
 export default useAdmin;
