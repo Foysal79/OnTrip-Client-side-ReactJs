@@ -114,7 +114,7 @@ const BookingForm = ({tripTitle, tripPrice}) => {
 				</div>
 
 				<div className="col-span-full">
-					<label htmlFor="Description" className="text-lg font-medium text-white">Description</label>
+					<label htmlFor="Description" className="text-lg font-medium text-white">Guid List</label>
 					{/* <input  id="Description" name="description" type="text" placeholder="Description" className="w-full rounded-md border-2 py-2 px-4 text-black" /> */}
 
 					<select className="w-full rounded-md border-2 py-2 px-4 text-black  "   {...register("Guid", { required: true })}>
