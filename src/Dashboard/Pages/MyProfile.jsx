@@ -16,7 +16,7 @@ const MyProfile = () => {
     return (
         <div className='w-full bg-[#023047] py-10 text-white px-8 rounded-2xl ' >
             <Helmet>
-                <title>OnTrip || Admin Home</title>
+                <title>OnTrip || My Profile </title>
             </Helmet>
             <div className='flex justify-center items-center'>
                 {

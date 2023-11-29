@@ -5,7 +5,7 @@ import { useLoaderData } from "react-router-dom";
 
 const TourGuidesProfileOnlyUserSee = () => {
     const SinglePackages = useLoaderData();
-    const {_id , name, email} = SinglePackages || {}
+    const {_id , name, email, done} = SinglePackages || {}
     return (
         <div className=' bg-[#023047] my-12 w-10/12 mx-auto py-10 text-white px-8 rounded-2xl ' >
         <Helmet>
@@ -34,6 +34,23 @@ const TourGuidesProfileOnlyUserSee = () => {
             
 
             </div>
+        </div>
+
+        <div className="text-center space-y-4" >
+            <h1 className="text-4xl font-semibold" >Work Experience : <span className="text-gray-400" >4+ (Years)</span> </h1>
+            <h4 className="text-2xl font-semibold" >Work Done : {done? <span className="text-gray-400" >{done}</span>
+             : <span className="text-gray-400" >10+</span> } </h4>
+
+             <div className="space-y-4" >
+             <h2 className="text-xl font-semibold" >Message Us</h2>
+            
+            
+            <textarea className="rounded-xl w-6/12 h-24 text-black p-6" name="" id="" ></textarea> 
+            
+            
+            <button className="btn bg-[#FFB703] hover:bg-[#FFB703]  block text-white w-4/12 mx-auto" >Send</button>
+             
+             </div>
         </div>
         
        

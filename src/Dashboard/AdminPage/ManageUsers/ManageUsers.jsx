@@ -4,6 +4,7 @@ import { GrUserAdmin } from "react-icons/gr";
 import useAxiosSecure from '../../../Hook/useAxiosSecure';
 import { MdAddModerator } from "react-icons/md";
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 const ManageUsers = () => {
     const axiosSecure = useAxiosSecure();
@@ -58,6 +59,9 @@ const ManageUsers = () => {
 
     return (
         <div className='text-white bg-[#023047] p-8 rounded-2xl min-h-screen space-y-5' >
+            <Helmet>
+                <title> OnTrip || Manage Users</title>
+            </Helmet>
             <h1 className='text-5xl font-bold text-center '>All Users : {users.length} </h1>
             <div className="overflow-x-auto text-white hover:bg-[#023047]">
   <table className="table text-white hover:bg-[#023047] ">

@@ -1,8 +1,13 @@
 import { useForm } from 'react-hook-form';
 import useAxiosPublic from '../../Hook/useAxiosPublic';
 import { useQuery } from '@tanstack/react-query';
+import { useContext } from 'react';
+import { AuthContext } from '../../Provider/AuthProvider';
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+
 
 const BookingForm = ({tripTitle, tripPrice}) => {
+	const {user} = useContext(AuthContext);
 
 	const axiosPublic = useAxiosPublic()
     const {data : guid = [] } = useQuery({
@@ -20,6 +25,15 @@ const BookingForm = ({tripTitle, tripPrice}) => {
 		
         
     }
+	const handelUser = () => {
+		Swal.fire({
+			icon: "error",
+			title: "Booking any tour pakages must be Login pls",
+			text: "Something went wrong!",
+			footer: '<a href="/signIn">Loging Page </a>'
+		  });
+
+	}
 
     return (
         <div className="bg-[#023047] rounded-xl my-10" >
@@ -44,14 +58,14 @@ const BookingForm = ({tripTitle, tripPrice}) => {
 					<label htmlFor="PictureURL" className="text-lg font-medium text-white">Tourist Image</label>
 
 					{/* <input  id="PictureURL" name="touristImage" type="text" placeholder="Tourist Image" className="w-full rounded-md border-2 py-2 px-4 text-black" /> */}
-					<input className="w-full rounded-md border-2 py-2 px-4 text-black " type="text" placeholder="Tourist Image" {...register("touristImage", {required: true, maxLength: 150})} />
+					<input defaultValue={user?.photoURL} className="w-full rounded-md border-2 py-2 px-4 text-black " type="text" placeholder="Tourist Image" {...register("touristImage", {required: true, maxLength: 150})} />
 				</div>
 				<div className="col-span-full sm:col-span-3">
 					<label htmlFor="youName" className="text-lg font-medium text-white">Tourist Name</label>
 					
 					{/* <input id="youName" name="touristName" type="text" placeholder="Tourist Name"    className="w-full rounded-md border-2 py-2 px-4 text-black" /> */}
 
-					<input className="w-full rounded-md border-2 py-2 px-4 text-black " type="text" placeholder="Tourist Name" {...register("touristName", {required: true, maxLength: 150})} />
+					<input defaultValue={user?.displayName} className="w-full rounded-md border-2 py-2 px-4 text-black " type="text" placeholder="Tourist Name" {...register("touristName", {required: true, maxLength: 150})} />
 
 				</div>
                 <div className="col-span-full sm:col-span-3">
@@ -59,7 +73,7 @@ const BookingForm = ({tripTitle, tripPrice}) => {
                </h2>
 					{/* <input id="yourEmail" name="touristEmail" placeholder="Tourist Email"     type="email"  className="w-full rounded-md border-2 py-2 px-4 text-black" /> */}
 
-					<input className="w-full rounded-md border-2 py-2 px-4 text-black " type="email" placeholder="Tourist Email" {...register("touristEmail", {required: true, maxLength: 150})} />
+					<input defaultValue={user?.email} className="w-full rounded-md border-2 py-2 px-4 text-black " type="email" placeholder="Tourist Email" {...register("touristEmail", {required: true, maxLength: 150})} />
 
 				</div>
                 <div className="col-span-full sm:col-span-3">
@@ -81,10 +95,10 @@ const BookingForm = ({tripTitle, tripPrice}) => {
 					<label htmlFor="Description" className="text-lg font-medium text-white">Description</label>
 					{/* <input  id="Description" name="description" type="text" placeholder="Description" className="w-full rounded-md border-2 py-2 px-4 text-black" /> */}
 
-					<select className="w-full rounded-md border-2 py-2 px-4 text-black"   {...register("Guid", { required: true })}>
+					<select className="w-full rounded-md border-2 py-2 px-4 text-black  "   {...register("Guid", { required: true })}>
                      <option disabled selected value="Guid1">Guid List </option>
 					 {
-						guid.map(guid => <option key={guid._id} value={guid._id}>{guid.name}</option> )
+						guid.map(guid => <option className='bg-[#219EBC]' key={guid._id} value={guid.email}>{guid.name}</option> )
 					 }
                      {/* <option value="Guid1">Guid 1</option>
                      <option value="Guid2">Guid2</option>
@@ -97,8 +111,17 @@ const BookingForm = ({tripTitle, tripPrice}) => {
 					<label htmlFor="serviceArea" className="text-lg font-medium text-white">Service Area</label>
 					<input  id="serviceArea" name="serviceArea" type="text" placeholder="Service Area" className="w-full rounded-md border-2 py-2 px-4 text-black" />
 				</div> */}
+
+				{
+					user ? 
+					<button className=" col-span-full 
+					 w-full text-white rounded-md bg-[#FFB703] hover:bg-[#FFB703] py-4 px-10 text-xl font-bold"  
+					 type='submit' > Booking </button> 
+					 :
+					  <div> <h2 onClick={handelUser} className="text-white w-10/12 mx-auto btn bg-[#FFB703] hover:bg-[#FFB703] " > booking  </h2> </div>
+				}
                 
-					<button className=" col-span-full  w-full text-white rounded-md bg-[#FFB703] py-4 px-10 text-xl font-bold"  type='submit' > Booking </button>
+					
 				
 				
 				
