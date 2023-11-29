@@ -5,10 +5,12 @@ import { useContext } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import useAxiosSecure from '../../Hook/useAxiosSecure';
+import { useNavigate } from 'react-router-dom';
 
 
 const BookingForm = ({tripTitle, tripPrice}) => {
 	const {user} = useContext(AuthContext);
+	const navigate = useNavigate();
 
 	const axiosSecure = useAxiosSecure();
 
@@ -38,6 +40,9 @@ const BookingForm = ({tripTitle, tripPrice}) => {
 						icon: "success"
 					
 					});
+
+					navigate('/dashboard/myBooking')
+
 				}
 			})
 

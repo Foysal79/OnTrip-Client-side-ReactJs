@@ -65,26 +65,8 @@ const NavBar1 = () => {
             
           </div>
           <li><Link to='/dashboard/myProfile' > <h>profile</h> </Link></li>
-          {/* <li>
-          {
-            admin && <Link to='/dashboard/myProfile' > <li><a>profile</a></li> </Link>
-          }
-          {
-            Tourist && <Link to='/dashboard/userHome' > <li><a>profile</a></li> </Link>
-          }
-          {
-            TourGuide && <Link to='/dashboard/guideHome' > <li><a>profile</a></li> </Link>
-          }
-          </li> */}
-          {
-            admin && <Link to='/dashboard/myProfile' > <li><a>Dashboard</a></li> </Link>
-          }
-          {
-            Tourist && <Link to='/dashboard/myProfile' > <li><a>Dashboard</a></li> </Link>
-          }
-          {
-            TourGuide && <Link to='/dashboard/myProfile' > <li><a>Dashboard</a></li> </Link>
-          }
+          <Link to='/dashboard/myProfile' > <li><a>Dashboard</a></li> </Link>
+          
           
            
           <li><a>Offer Announcements</a></li>
