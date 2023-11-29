@@ -1,6 +1,9 @@
 import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 import BookingForm from "./BookingForm";
+import ReactFrom from "./ReactFrom";
+import useAxiosPublic from "../../Hook/useAxiosPublic";
+import { useQuery } from "@tanstack/react-query";
 
 
 
@@ -9,6 +12,17 @@ const SinglePackages = () => {
     const SinglePackages = useLoaderData();
     const {_id, tripTitle, tripType, tripPrice, popularType, imgUrl1, imgUrl2, imgUrl3, imgUrl4, imgUrl5, description} = SinglePackages || {}
     const details = description.split('|')
+
+
+    const axiosPublic = useAxiosPublic()
+    const {data : guid = [] } = useQuery({
+        queryKey: ['guid'],
+        queryFn: async () => {
+           const res = await axiosPublic.get('/users/allGuid');
+           return  res.data;
+        }
+   })
+
     return (
         <div className="my-10 w-9/12 mx-auto" >
             <Helmet>
@@ -78,15 +92,19 @@ const SinglePackages = () => {
           <h1 className="text-4xl font-bold text-center mt-10" >Tourist Guide List</h1>
 
               <select className="select select-primary w-full mt-10  text-xl font-semibold">
-               <option disabled selected>Tour Guide</option>
-              <option>Game of Thrones</option>
+               <option disabled selected>Tour Guide List</option>
+               {
+                guid.map(guide => <option key={guide._id} >{guide.name}</option>)
+               }
+              {/* <option>Game of Thrones</option>
                 <option>Lost</option>
                <option>Breaking Bad</option>
-              <option>Walking Dead</option>
+              <option>Walking Dead</option> */}
               </select>
               {/* form */}
 
-             <BookingForm tripTitle={tripTitle} ></BookingForm>
+             <BookingForm tripTitle={tripTitle} tripPrice={tripPrice} ></BookingForm>
+             {/* <ReactFrom></ReactFrom> */}
             
 
         </div>
