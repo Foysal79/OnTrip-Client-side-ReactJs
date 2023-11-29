@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../Hook/useAxiosPublic";
+import { Link } from "react-router-dom";
 
 
 
@@ -31,14 +32,15 @@ const TourGuides = () => {
     </thead>
     <tbody>
       {/* row 1 */}
+      {/* to={`/singlePackages/${guid._id}` */}
       {
-        guid.map((guide, index) =>  <tr key={guid._id} >
+        guid.map((guide, index) =>  <tr key={guide._id} >
             <th>{index + 1}</th>
             <td>{guide.name}</td>
             <td>{guide.email}</td>
-            <td> <button className="btn bg-[#023047] hover:bg-[#023047] text-white" >
+            <td> <Link to={`/guid/${guide._id}`}  ><button className="btn bg-[#023047] hover:bg-[#023047] text-white" >
                    Guide Details
-                </button> </td>
+                </button></Link> </td>
           </tr> )
       }
      

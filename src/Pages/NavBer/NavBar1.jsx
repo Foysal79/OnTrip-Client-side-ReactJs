@@ -13,7 +13,7 @@ const NavBar1 = () => {
 
     const handelLogOut = () => {
       LogOut();
-      navigate('/');
+      navigate('/signIn');
     }
 
     

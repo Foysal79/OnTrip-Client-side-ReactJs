@@ -1,9 +1,10 @@
 import { Helmet } from "react-helmet-async";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import BookingForm from "./BookingForm";
 import ReactFrom from "./ReactFrom";
 import useAxiosPublic from "../../Hook/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
+import TourGuides from "../../Components/TourGuides/TourGuides";
 
 
 
@@ -89,18 +90,13 @@ const SinglePackages = () => {
 
 
 
-          <h1 className="text-4xl font-bold text-center mt-10" >Tourist Guide List</h1>
+          <div className="border-2 m-4 rounded-xl" >
+          <h1 className="text-4xl font-bold text-center mt-10 mb-10" >Tourist Guide List</h1>
 
-              <select className="select select-primary w-full mt-10  text-xl font-semibold">
-               <option disabled selected>Tour Guide List</option>
-               {
-                guid.map(guide => <option key={guide._id} >{guide.name}</option>)
-               }
-              {/* <option>Game of Thrones</option>
-                <option>Lost</option>
-               <option>Breaking Bad</option>
-              <option>Walking Dead</option> */}
-              </select>
+            
+           <TourGuides></TourGuides>           
+          </div>
+
               {/* form */}
 
              <BookingForm tripTitle={tripTitle} tripPrice={tripPrice} ></BookingForm>
