@@ -4,10 +4,13 @@ import { useQuery } from '@tanstack/react-query';
 import { useContext } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2/dist/sweetalert2.js'
+import useAxiosSecure from '../../Hook/useAxiosSecure';
 
 
 const BookingForm = ({tripTitle, tripPrice}) => {
 	const {user} = useContext(AuthContext);
+
+	const axiosSecure = useAxiosSecure();
 
 	const axiosPublic = useAxiosPublic()
     const {data : guid = [] } = useQuery({
@@ -22,6 +25,23 @@ const BookingForm = ({tripTitle, tripPrice}) => {
     const onSubmit = data => {
 		
 			console.log(data);
+
+			axiosSecure.post('/bookedPackges', data)
+			.then(res => {
+				console.log(res.data);
+
+				if(res.data.insertedId)
+				{
+					Swal.fire({
+						title: `congratulations`,
+						text: "we will contact you shortly!",
+						icon: "success"
+					
+					});
+				}
+			})
+
+		
 		
         
     }
@@ -51,6 +71,8 @@ const BookingForm = ({tripTitle, tripPrice}) => {
 
 
                     <input defaultValue={tripTitle} className="w-full rounded-md border-2 py-2 px-4 text-black " type="text" placeholder="pckageName" {...register("pckageName", {required: true, maxLength: 150})} />
+
+                    <input hidden defaultValue={"Review"} className="w-full rounded-md border-2 py-2 px-4 text-black " type="text" placeholder="status" {...register("status", { maxLength: 150})} />
 
 					{/* <input defaultValue={tripTitle}  id="ServiceName" name="pckageName" type="text" placeholder="Name of the package" className="w-full rounded-md border-2 py-2 px-4 text-black " /> */}
 				</div>
@@ -97,9 +119,9 @@ const BookingForm = ({tripTitle, tripPrice}) => {
 
 					<select className="w-full rounded-md border-2 py-2 px-4 text-black  "   {...register("Guid", { required: true })}>
                      <option disabled selected value="Guid1">Guid List </option>
-					 {
+					{
 						guid.map(guid => <option className='bg-[#219EBC]' key={guid._id} value={guid.email}>{guid.name}</option> )
-					 }
+					}
                      {/* <option value="Guid1">Guid 1</option>
                      <option value="Guid2">Guid2</option>
                       <option value="Guid3">Guid3</option>
@@ -112,14 +134,22 @@ const BookingForm = ({tripTitle, tripPrice}) => {
 					<input  id="serviceArea" name="serviceArea" type="text" placeholder="Service Area" className="w-full rounded-md border-2 py-2 px-4 text-black" />
 				</div> */}
 
-				{
+                 {
+					user && <button className=" col-span-full 
+					w-full text-white rounded-md bg-[#FFB703] hover:bg-[#FFB703] py-4 px-10 text-xl font-bold"  
+				   type='submit' > Booking </button> 
+				 }
+				 {
+					!user  && <div> <h2 onClick={handelUser} className="text-white w-10/12 mx-auto btn bg-[#FFB703] hover:bg-[#FFB703] " > booking  </h2> </div>
+				 }
+
+				{/* {
 					user ? 
 					<button className=" col-span-full 
 					 w-full text-white rounded-md bg-[#FFB703] hover:bg-[#FFB703] py-4 px-10 text-xl font-bold"  
-					 type='submit' > Booking </button> 
-					 :
-					  <div> <h2 onClick={handelUser} className="text-white w-10/12 mx-auto btn bg-[#FFB703] hover:bg-[#FFB703] " > booking  </h2> </div>
-				}
+					type='submit' > Booking </button> 
+					: <div> <h2 onClick={handelUser} className="text-white w-10/12 mx-auto btn bg-[#FFB703] hover:bg-[#FFB703] " > booking  </h2> </div>
+				} */}
                 
 					
 				
