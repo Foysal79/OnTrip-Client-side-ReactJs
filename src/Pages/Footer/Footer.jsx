@@ -12,30 +12,28 @@ const Footer = () => {
 		</div>
 		<div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
 			<div className="space-y-3">
-				<h3 className="tracki uppercase text-gray-50">Product</h3>
+				<h3 className="tracki uppercase text-gray-50">Packages</h3>
 				<ul className="space-y-1">
 					<li>
-						<a rel="noopener noreferrer" href="#">Features</a>
+						<a rel="noopener noreferrer" href="/packages">All Packages</a>
 					</li>
 					<li>
-						<a rel="noopener noreferrer" href="#">Integrations</a>
+						<a rel="noopener noreferrer" href="/packages">All Type</a>
 					</li>
-					<li>
-						<a rel="noopener noreferrer" href="#">Pricing</a>
-					</li>
-					<li>
-						<a rel="noopener noreferrer" href="#">FAQ</a>
-					</li>
+					
 				</ul>
 			</div>
 			<div className="space-y-3">
 				<h3 className="tracki uppercase text-gray-50">Company</h3>
 				<ul className="space-y-1">
 					<li>
-						<a rel="noopener noreferrer" href="#">Privacy</a>
+						<a rel="noopener noreferrer" href="/about">About Us</a>
 					</li>
 					<li>
-						<a rel="noopener noreferrer" href="#">Terms of Service</a>
+						<a rel="noopener noreferrer" href="/community">community</a>
+					</li>
+					<li>
+						<a rel="noopener noreferrer" href="/contact">contact us</a>
 					</li>
 				</ul>
 			</div>
