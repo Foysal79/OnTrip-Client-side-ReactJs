@@ -29,6 +29,9 @@ import SinglePackages from "../Pages/singlePackages/singlePackages";
 import TourGuidesProfileOnlyUserSee from "../Components/TourGuidesProfileOnlyUserSee/TourGuidesProfileOnlyUserSee";
 import TotalStory from "../Pages/Home/AllStories/TotalStory";
 import SingleStory from "../Pages/Home/AllStories/SingleStory";
+import Community from "../Dashboard/Pages/Community/Community";
+import AboutUs from "../Components/AboutUs/AboutUs";
+import ContactUs from "../Dashboard/Pages/ContactUs/ContactUs";
 
 
 
@@ -41,6 +44,20 @@ import SingleStory from "../Pages/Home/AllStories/SingleStory";
             {
                 path : '/',
                 element: <Home></Home>
+            },
+            {
+                 path : '/community',
+                 element : <Community></Community>
+            },
+            {
+              path : '/about',
+              element: <AboutUs></AboutUs>
+
+            },
+            {
+              path: '/contact',
+              element : <ContactUs></ContactUs>
+
             },
             {
               path : '/packages/HillTracts',
@@ -58,6 +75,7 @@ import SingleStory from "../Pages/Home/AllStories/SingleStory";
               path : '/packages/HaorTours',
               element: <HaorTours></HaorTours>
             },
+            
             {
               path : '/packages/AdventureTours',
               element: <AdventureTours></AdventureTours>

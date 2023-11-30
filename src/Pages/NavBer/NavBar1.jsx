@@ -28,7 +28,7 @@ const NavBar1 = () => {
       <ul className="menu menu-sm dropdown-content mt-3 bg-[#023047] z-[10] p-2 shadow  rounded-box w-52">
       <li><NavLink className="mr-4 md:text-lg " to='/' >Home</NavLink></li>
       <li><NavLink className="mr-4 md:text-lg " to='/community' >Community</NavLink></li>
-      <li><NavLink className="mr-4 md:text-lg " to='/blogs' >blogs</NavLink></li>
+      <li><NavLink className="mr-4 md:text-lg " to='/totalStory' >blogs</NavLink></li>
       <li><NavLink className="mr-4 md:text-lg " to='/about' >About Us</NavLink></li>
       <li><NavLink className="mr-4 md:text-lg " to='/contact' >Contact Us</NavLink></li>
         
@@ -41,7 +41,7 @@ const NavBar1 = () => {
     <ul className="menu menu-horizontal px-1 text-white font-semibold">
     <li><NavLink className="mr-4 md:text-lg " to='/' >Home</NavLink></li>
       <li><NavLink className="mr-4 md:text-lg " to='/community' >Community</NavLink></li>
-      <li><NavLink className="mr-4 md:text-lg " to='/blogs' >blogs</NavLink></li>
+      <li><NavLink className="mr-4 md:text-lg " to='/totalStory' >blogs</NavLink></li>
       <li><NavLink className="mr-4 md:text-lg " to='/about' >About Us</NavLink></li>
       <li><NavLink className="mr-4 md:text-lg " to='/contact' >Contact Us</NavLink></li>
     </ul>
