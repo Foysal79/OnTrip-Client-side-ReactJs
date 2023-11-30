@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const StoryCard = ({item}) => {
-    const {pckageName, touristImage, touristName, touristEmail, imgUrl, Details} = item || {}
+    const {pckageName, touristImage, touristName, touristEmail, imgUrl, Details, _id} = item || {}
     return (
         <div className="flex 96 flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md text-white bg-[#023047] ">
 	<div className="flex space-x-4">
@@ -16,9 +17,13 @@ const StoryCard = ({item}) => {
 		<h2 className="mb-1 text-xl font-semibold">{pckageName}</h2>
 		<p className="text-sm dark:dark:text-gray-400">{Details}</p>
 	</div>
-	<div className="flex flex-wrap justify-between">
-		
-		 <button className='btn w-full bg-[#FFB703] hover:bg-[#FFB703] text-white font-bold '>View Details</button>
+	<div className="flex   justify-center">
+		<Link to={`/Story/${_id}`} >
+
+        <button className='btn w-full bg-[#FFB703] hover:bg-[#FFB703] text-white font-bold '>View Details</button>
+
+        </Link>
+		 
 	</div>
 </div>
     );

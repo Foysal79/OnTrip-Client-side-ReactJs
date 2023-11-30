@@ -28,6 +28,7 @@ import SinglePackages from "../Pages/singlePackages/singlePackages";
 
 import TourGuidesProfileOnlyUserSee from "../Components/TourGuidesProfileOnlyUserSee/TourGuidesProfileOnlyUserSee";
 import TotalStory from "../Pages/Home/AllStories/TotalStory";
+import SingleStory from "../Pages/Home/AllStories/SingleStory";
 
 
 
@@ -73,6 +74,12 @@ import TotalStory from "../Pages/Home/AllStories/TotalStory";
               path : '/singlePackages/:id',
               element : <SinglePackages></SinglePackages>,
               loader : ({params}) =>  fetch(`http://localhost:5000/singlePackages/${params.id}`),
+    
+            },
+            {
+              path : '/Story/:id',
+              element : <SingleStory></SingleStory>,
+              loader : ({params}) =>  fetch(`http://localhost:5000/Story/${params.id}`),
     
             },
             {
