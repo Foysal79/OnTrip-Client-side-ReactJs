@@ -54,6 +54,8 @@ const AuthProvider = ({children}) => {
                 // remove token
                 localStorage.removeItem('access-token');
             }
+            setUser(currentUser);
+          setLoading(false);
 
             updateProfile(auth.currentUser, {
                 displayName: currentUser.displayName,
@@ -61,8 +63,7 @@ const AuthProvider = ({children}) => {
             })
 
             
-          setUser(currentUser);
-          setLoading(false);
+          
          
         })
         return () => {

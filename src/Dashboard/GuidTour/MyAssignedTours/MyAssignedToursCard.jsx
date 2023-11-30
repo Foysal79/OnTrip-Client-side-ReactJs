@@ -50,7 +50,7 @@ const MyAssignedToursCard = ({item}) => {
                 Swal.fire({
                     title: "Rejected",
                     text: "You clicked the button!",
-                    icon: "error"
+                    icon: "success"
                   });
             }
         })

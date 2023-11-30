@@ -4,6 +4,8 @@ import { Helmet } from "react-helmet-async";
 import { MdVerified } from "react-icons/md";
 import useAdmin from "../../Hook/useAdmin";
 import useGuid from "../../Hook/useGuid";
+import GuidInfoForm from "../GuidTour/GuideHome/GuidInfoForm";
+import StoryForm from "./storyForm/storyForm";
 
 
 const MyProfile = () => {
@@ -11,6 +13,7 @@ const MyProfile = () => {
 
      const [isAdmin] = useAdmin();
      const [isGuid] = useGuid();
+     console.log(isGuid);
 
     const {user} = useContext(AuthContext);
     return (
@@ -52,6 +55,17 @@ const MyProfile = () => {
 
                 </div>
             </div>
+
+            {
+                isGuid && <GuidInfoForm email={user.email} ></GuidInfoForm>
+            }
+
+
+
+
+            {
+                (!isAdmin && !isGuid) && <StoryForm></StoryForm>
+            }
             
            
 

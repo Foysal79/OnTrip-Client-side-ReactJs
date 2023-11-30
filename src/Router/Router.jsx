@@ -72,7 +72,7 @@ import TourGuidesProfileOnlyUserSee from "../Components/TourGuidesProfileOnlyUse
             },
             {
               path : '/guid/:id',
-              element : <TourGuidesProfileOnlyUserSee></TourGuidesProfileOnlyUserSee>,
+              element : <PrivetRouter> <TourGuidesProfileOnlyUserSee></TourGuidesProfileOnlyUserSee> </PrivetRouter>,
               loader : ({params}) =>  fetch(`http://localhost:5000/guid/${params.id}`),
     
             },
