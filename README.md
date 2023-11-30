@@ -1,8 +1,18 @@
-# React + Vite
+# OnTrip
+### Live Link : https://ontrip-d851d.web.app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**OnTrip website features **
 
-Currently, two official plugins are available:
+- OnTrip, the world's largest travel guidance platform .
+- Tourist can book the package of your choice .
+- Tourist can review this tur guid and turist see the tur guid profile.
+- Tourist can share story on OnTrip Website and also share facebook.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Tourist Guid update this profile.
+- Tourist Guid see how many people tur guid request. 
+- Tour guid wish accepted or rejected.
+
+- Admin only update or add packages.
+- Admin can make other user admin or guid.
+- Admin can delete any tour guide from system.
+
