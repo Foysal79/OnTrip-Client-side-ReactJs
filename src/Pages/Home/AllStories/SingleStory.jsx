@@ -1,9 +1,16 @@
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
+import { FacebookIcon, FacebookShareButton } from "react-share";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 
 const SingleStory = () => {
 
     const SingleStory = useLoaderData();
+    const currentUrl = window.location.href;
+    const {user} = useContext(AuthContext);
+
+    
 
     const {pckageName, touristImage, touristName, touristEmail, imgUrl, Details, _id} = SingleStory || {}
     
@@ -23,6 +30,8 @@ const SingleStory = () => {
 		<p className="text-sm dark:dark:text-gray-400">{Details}</p>
 	</div>
 	<div className="flex flex-wrap justify-between">
+
+
 		<div className="space-x-2">
 			<button aria-label="Share this post" type="button" className="p-2 text-center">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-4 h-4 fill-current dark:dark:text-violet-400">
@@ -35,6 +44,31 @@ const SingleStory = () => {
 				</svg>
 			</button>
 		</div>
+
+
+             {
+                user &&  <div>
+
+                <FacebookShareButton url={currentUrl} >
+                    <FacebookIcon round={true} ></FacebookIcon>
+                </FacebookShareButton>
+    
+    
+            </div>
+             }
+             {
+                !user &&  <div>
+
+                
+                    <FacebookIcon round={true} ></FacebookIcon>
+                
+    
+    
+            </div>
+             }
+       
+
+
 		<div className="flex space-x-2 text-sm dark:dark:text-gray-400">
 			<button type="button" className="flex items-center p-1 space-x-1.5">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-label="Number of comments" className="w-4 h-4 fill-current dark:dark:text-violet-400">
