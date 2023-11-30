@@ -27,6 +27,7 @@ import AllPackages from "../Pages/AllPackages/AllPackages";
 import SinglePackages from "../Pages/singlePackages/singlePackages";
 
 import TourGuidesProfileOnlyUserSee from "../Components/TourGuidesProfileOnlyUserSee/TourGuidesProfileOnlyUserSee";
+import TotalStory from "../Pages/Home/AllStories/TotalStory";
 
 
 
@@ -63,6 +64,10 @@ import TourGuidesProfileOnlyUserSee from "../Components/TourGuidesProfileOnlyUse
             {
               path : '/packages',
               element: <AllPackages></AllPackages>
+            },
+            {
+              path : '/totalStory',
+              element: <TotalStory></TotalStory>
             },
             {
               path : '/singlePackages/:id',
