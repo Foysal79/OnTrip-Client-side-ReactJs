@@ -1,9 +1,13 @@
 import ReactPlayer from "react-player";
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
+import { Helmet } from "react-helmet-async";
 
 const AboutUs = () => {
     return (
         <div className="w-11/12 mx-auto my-10" >
+            <Helmet>
+                <title>OnTrip  </title>
+            </Helmet>
             <div className="lg:flex justify-center items-center space-y-4">
                 <div className="flex-1 space-y-4 lg:p-4">
                     <h2 className=" md:w-6/12  bg-[#219EBC] text-white md:text-xl 

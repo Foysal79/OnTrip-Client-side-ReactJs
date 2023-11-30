@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { FacebookIcon, FacebookShareButton } from "react-share";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 
 const SingleStory = () => {
@@ -16,6 +17,9 @@ const SingleStory = () => {
     
     return (
         <div className="min-h-[420px]" >
+			<Helmet>
+				<title>OnTrip || {pckageName}</title>
+			</Helmet>
            <div className="flex my-16 flex-col w-6/12 mx-auto p-6 space-y-6 overflow-hidden rounded-lg shadow-2xl dark:dark:bg-gray-900 dark:dark:text-gray-100">
 	<div className="flex space-x-4">
 		<img alt="" src={touristImage} className="object-cover w-12 h-12 rounded-full shadow dark:dark:bg-gray-500" />

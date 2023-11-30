@@ -91,19 +91,19 @@ import ContactUs from "../Dashboard/Pages/ContactUs/ContactUs";
             {
               path : '/singlePackages/:id',
               element : <SinglePackages></SinglePackages>,
-              loader : ({params}) =>  fetch(`http://localhost:5000/singlePackages/${params.id}`),
+              loader : ({params}) =>  fetch(`https://ontrip-server-side.vercel.app/singlePackages/${params.id}`),
     
             },
             {
               path : '/Story/:id',
               element : <SingleStory></SingleStory>,
-              loader : ({params}) =>  fetch(`http://localhost:5000/Story/${params.id}`),
+              loader : ({params}) =>  fetch(`https://ontrip-server-side.vercel.app/Story/${params.id}`),
     
             },
             {
               path : '/guid/:id',
               element : <PrivetRouter> <TourGuidesProfileOnlyUserSee></TourGuidesProfileOnlyUserSee> </PrivetRouter>,
-              loader : ({params}) =>  fetch(`http://localhost:5000/guid/${params.id}`),
+              loader : ({params}) =>  fetch(`https://ontrip-server-side.vercel.app/guid/${params.id}`),
     
             },
           ]

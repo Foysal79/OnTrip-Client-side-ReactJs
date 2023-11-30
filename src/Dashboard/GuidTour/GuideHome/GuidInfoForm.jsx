@@ -51,7 +51,7 @@ const GuidInfoForm = ({email}) => {
 
 
 
-        fetch(`http://localhost:5000/users/${singleGuid._id}`, {
+        fetch(`https://ontrip-server-side.vercel.app/users/${singleGuid._id}`, {
 			method: "PATCH",
             headers:{
                 "content-type": "application/json"

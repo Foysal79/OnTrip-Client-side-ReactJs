@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import Title from "../../../Shared/Title";
 import StoryCard from "./StoryCard";
 import useAxiosPublic from "../../../Hook/useAxiosPublic";
+import { Helmet } from "react-helmet-async";
 
 
 const TotalStory = () => {
@@ -18,6 +19,9 @@ const TotalStory = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>OnTrip || Blog</title>
+            </Helmet>
             <Title subHeading={"All Stories"} heading={"OUR RECENT POSTS"} ></Title>
             <div className="my-10" >
 

@@ -9,7 +9,7 @@ const MyAssignedToursCard = ({item}) => {
 
     const handelAccepted = ( id ) => {
         
-        fetch(`http://localhost:5000/bookedPackges/${id}`, {
+        fetch(`https://ontrip-server-side.vercel.app/bookedPackges/${id}`, {
            method : "PATCH",
            headers : {
                'content-type' : 'application/json',
@@ -34,7 +34,7 @@ const MyAssignedToursCard = ({item}) => {
     const handelRejected = ( id ) => {
         console.log(" handelRejected ", id);
 
-        fetch(`http://localhost:5000/bookedPackges/${id}`, {
+        fetch(`https://ontrip-server-side.vercel.app/bookedPackges/${id}`, {
            method : "PATCH",
            headers : {
                'content-type' : 'application/json',
