@@ -1,7 +1,7 @@
 # OnTrip
 ### Live Link : https://ontrip-d851d.web.app
 
-**OnTrip website features **
+**OnTrip website features**
 
 - OnTrip, the world's largest travel guidance platform .
 - Tourist can book the package of your choice .
