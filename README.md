@@ -16,3 +16,31 @@
 - Admin can make other user admin or guid.
 - Admin can delete any tour guide from system.
 
+
+## using technology 
+# Frontend
+- HTML .
+- CSS .
+- framework css tailwind .
+- tailwind library daisyui .
+- tailwind library flowbite .
+- tailwind library Mamba UI .
+- tailwind library Preline .
+- Material Ui.
+- JavaScript .
+- Firebase .
+- React js .
+- React-router .
+- react-helmet .
+- sweetalert2 .
+- react-marquee-slider .
+-  Lottie-react.
+
+
+# Backend
+- javascript .
+- dotnet.
+- node js.
+- Express js .
+- MongoDB .
+
